@@ -15,7 +15,7 @@
 
     <style>
         body {
-            background: linear-gradient(to right, #fff9c4, #ffe082);
+            background: linear-gradient(to right, #fff9c4, #ffe082); /* kuning ke oranye */
             font-family: 'Poppins', sans-serif;
         }
 
@@ -40,8 +40,7 @@
             color: #000;
         }
 
-        .btn-warning:hover,
-        .btn-outline-warning:hover {
+        .btn-warning:hover {
             background-color: #FB8C00;
             color: #fff;
         }

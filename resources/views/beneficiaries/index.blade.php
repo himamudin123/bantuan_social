@@ -3,8 +3,8 @@
 @section('content')
 <div class="card shadow p-4 rounded mb-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h3 class="text-warning">Daftar Penerima Bantuan</h3>
-        <a href="{{ route('beneficiaries.create') }}" class="btn btn-warning">
+        <h3 class="text-success">Daftar Penerima Bantuan</h3>
+        <a href="{{ route('beneficiaries.create') }}" class="btn btn-success">
             <i class="bi bi-plus-circle"></i> Tambah Data
         </a>
     </div>
@@ -13,8 +13,8 @@
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-    <table class="table table-bordered table-warning table-hover">
-        <thead>
+    <table class="table table-bordered table-hover">
+        <thead class="table-success">
             <tr>
                 <th>No</th>
                 <th>Nama</th>
@@ -34,11 +34,9 @@
                 <td>{{ $item->alamat }}</td>
                 <td>{{ $item->jenis_bantuan }}</td>
                 <td>
-                    @if($item->status_penerima === 'Layak')
-                        <span class="badge badge-layak">Layak</span>
-                    @else
-                        <span class="badge badge-tidak">Tidak Layak</span>
-                    @endif
+                    <span class="badge bg-{{ $item->status_penerima === 'Layak' ? 'success' : 'secondary' }}">
+                        {{ $item->status_penerima }}
+                    </span>
                 </td>
                 <td>
                     <a href="{{ route('beneficiaries.edit', $item->id) }}" class="btn btn-sm btn-warning">
